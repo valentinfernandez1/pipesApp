@@ -1,5 +1,6 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { AppRouterModule } from './app-router.module';
 import { AppComponent } from './app.component';
@@ -18,10 +19,11 @@ registerLocaleData(localEs);
     AppComponent
   ],
   imports: [
-    BrowserModule,
-    PrimeNgModule,
-    SharedModule,
     AppRouterModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    SharedModule,
+    PrimeNgModule,
     VentasModule
   ],
   providers: [

@@ -3,12 +3,50 @@
   <p>
     Pipes Incluidos en angular - Incluidos en el common Module
   </p>
-  
-<div class="flex grid">
-  <div class="col md-6 sm-9">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam officiis in voluptatum, mollitia ex nesciunt ab soluta odit? Sapiente dolor officiis quos eveniet temporibus quibusdam qui ipsa numquam repellat eos?
-  </div>
 </div>
 
+<div class="grid">
+  <p-fieldset class="col-12 md:col-6 sm:col-9" legend="i18nSelect Pipe" [toggleable]="true">
+
+    Saludos {{nombre}}, es un placer {{ genero | i18nSelect:invitacionMap }} a nuestro evento
+
+    <button pButton class="col-12" type="button" label="Cambiar" (click)="cambiarCliente()"></button>
+
+  </p-fieldset>
+  <p-fieldset class="col-12 md:col-6 sm:col-9" legend="i18nPlural Pipe" [toggleable]="true">
+
+    Actualmente tenemos {{clientes.length | i18nPlural: clientesMap }}un cliente esperando.
+
+    <button pButton class="col-12" type="button" label="BorrarCliente" (click)="borrarCliente()"></button>
+
+  </p-fieldset>
+
+  <div class="col-12 md:col-6 sm:col-9">
+    <p-fieldset legend="Slice Pipe" [toggleable]="true">
+
+      <b>Original</b>
+      <pre> {{clientes}} </pre>
+
+      <b>slice:0:2</b>
+      <pre> {{clientes | slice:0:2}} </pre>
+    </p-fieldset>
+  </div>
+  <div class="col-12 md:col-6 sm:col-9">
+    <p-fieldset legend="KeyValuePipe" [toggleable]="true">
+      <ul>
+        <li *ngFor="let item of persona | keyvalue">
+          {{item.key}} - {{item.value}}
+        </li>
+      </ul>
+    </p-fieldset>
+    <div class="col">
+      <p-fieldset legend="JSON-Pipe" [toggleable]="true">
+       <pre> {{heroes | json}} </pre>
+      </p-fieldset>
+    </div>
+  </div>
+
 </div>
+
+
 
